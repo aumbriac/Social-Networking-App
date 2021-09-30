@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Social Networking App</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Social Networking App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <button id="logout" class="btn btn-outline-danger ms-2 ms-auto">Logout</button>
+        </div>
+    </div>
+</nav>
+    <div class="absolute-center fs-1 text-center" id="loader"><div class="spinner-border" style="width: 7rem; height: 7rem; border-width: .5rem"></div></div>
+    <main class="row mx-auto mt-5 d-none">
+        <div class="col-md-4 offset-md-1">
+            <div class="text-center bg-dark p-3 rounded">
+                <img id="profile-pic" src="" class="img-thumbnail mb-1" style="max-width: 300px; max-height: 300px" />
+                <h3 class="mb-1" id="username"></h3>
+                <h5 class="mb-2" id="bio"></h5>
+                <div class="d-flex justify-content-center">
+                    <form class="form-group" id="update-profile-pic-form">
+                        <input class="form-control mx-auto my-3 d-none" id="file" type="file" name="file" required />
+                        <button id="update-profile-pic-btn" class="btn btn-primary bg-primary bg-gradient mb-3" type="submit">Update Profile Pic <span id="update-profile-pic-btn-loader" class="spinner-border spinner-border-sm d-none"></span></button>
+                    </form>
+                    <!-- <h3 class="custom-label text-start">Update Cover Pic</h3>
+                    <form class="form-group" id="update-cover-pic-form">
+                        <input class="form-control mx-auto my-3" id="cover-file" type="file" name="file" required />
+                        <button class="btn btn-primary bg-primary bg-gradient mb-3" type="submit">Update Cover Pic</button>
+                    </form> -->
+                        <button class="btn btn-primary bg-primary bg-gradient mb-3 ms-3" onclick="$('#update-bio-form').toggleClass('d-none')" id="update-bio-btn">Update Bio</button>
+                    </div>
+                    <div id="update-form-container">
+                    <form id="update-bio-form" class="d-none">
+                        <textarea placeholder="Update bio..." class="form-control mx-auto" type="text" name="text" id="bio-input"
+                            required></textarea>
+
+                        <button id="bio-btn" class="btn btn-primary bg-gradient mt-3" onclick="$('#update-bio-form').toggleClass('d-none')">Submit</button>
+                        <button class="btn btn-secondary bg-gradient mt-3" onclick="$('#update-bio-form').toggleClass('d-none')">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 offset-md-1">
+            <div class="text-center mb-2">
+                <button id="refresh-btn" class="material-icons btn btn-primary rounded-circle p-1 mt-2" style="font-size:3rem;">refresh</button>
+            </div>
+            <div class="bg-dark p-3 rounded">
+                <h3>Create New Post</h3>
+                <form class="form-group text-center mb-3" id="post-form">
+                    <textarea class="form-control mb-3" id="post-input-text" required></textarea>
+                    <img class="img-thumbnail d-none" src="" id="post-image-img">
+                    <span id="upload-post-image-btn" class="material-icons float-end bg-primary bg-gradient p-1 rounded">image</span>
+                    <input type="file" name="post-image" id="post-image-input" class="form-control d-none" />
+                    <button type="submit" class="btn btn-primary bg-primary bg-gradient me-2">Post <span id="post-btn-loader" class="spinner-border spinner-border-sm d-none"></span></button> 
+                    <button id="delete-posts-btn" class="btn btn-danger bg-danger">Delete All Posts</button>
+                </form>
+                <div id="posts"></div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Social Networking App</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Social Networking App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+    <div class="absolute-center fs-1 text-center" id="loader"><div class="spinner-border" style="width: 7rem; height: 7rem; border-width: .5rem"></div></div>
+    <main class="container-fluid mt-5 d-none">
+        <div id="login-container" class="col-md-4 mx-auto bg-black p-3 border border-light rounded">
+            <h1 class="text-center">Login</h1>
+            <form id="login-form">
+                <div class="row bg-black text-start mx-auto p-3 border border-light rounded">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="col-md-4">
+                            <label class="custom-label">Username</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input id="login-username" class="form-control" type="text" />
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="col-md-4">
+                            <label class="custom-label">Password</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input id="login-password" class="form-control" type="password" />
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+            <div class="text-center">
+                <small onclick="$('#register-container').toggleClass('d-none'); $('#login-container').toggleClass('d-none');" class="text-primary">Register</small>
+            </div>
+        </div>
+
+        <div id="register-container" class="row mx-auto bg-black text-center p-3 border border-light rounded d-none">
+            <h1>Register</h1>
+            <form id="register-form">
+                <div class="bg-black text-start mx-auto p-3 border border-light rounded">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="col-md-4">
+                            <label class="custom-label">Username</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input id="register-username" class="form-control" type="text" />
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="col-md-4">
+                            <label class="custom-label">Email Address</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input id="register-email" class="form-control" type="emaill" />
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="col-md-4">
+                            <label class="custom-label">Password</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input id="register-password" class="form-control" type="password" />
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="col-md-4">
+                            <label class="custom-label">Confirm Password</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input id="register-confirm-password" class="form-control" type="password" />
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>                
+                </div>
+                <small onclick="$('#login-container').toggleClass('d-none'); $('#register-container').toggleClass('d-none');"
+                    class="text-primary">Login</small>
+            </form>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

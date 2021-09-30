@@ -1,0 +1,31 @@
+body {
+    background-color: #111;
+    color: #fff;
+}
+
+textarea, input {
+    color: #fff !important;
+    background: #111 !important;
+}
+
+.material-icons {
+    cursor: pointer;
+}
+
+.absolute-center {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+.delete-post {
+    position: absolute !important;
+    top: .5rem !important;
+    right: .5rem !important;
+    cursor: pointer !important;
+}
+
+.love-post, .comment-post {
+    cursor: pointer;
+}
